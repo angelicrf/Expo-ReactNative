@@ -1,8 +1,23 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>Angelique Expo Screen Initial</Text>;
+const HomeScreen = ({ navigation }) => {
+    //console.log(navigation);
+    return(<View>
+        <Text style={styles.text}>Angelique Expo Screen Initial</Text>
+        <TouchableOpacity
+            onPress={() => console.log(navigation.navigate('Image'))}
+        >
+            <Text>Images</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            onPress={() => console.log(navigation.navigate('Components'))}
+        >
+            <Text>Friends List</Text>
+        </TouchableOpacity>
+
+    </View>
+    );
 };
 
 const styles = StyleSheet.create({

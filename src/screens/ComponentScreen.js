@@ -22,9 +22,10 @@ const ComponentScreen = () => {
 };
 const styles = StyleSheet.create({
     textStyle: {
-        backgroundColor: "lime",
+        backgroundColor: "red",
         fontSize: 25,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginVertical: 50,
     }
 })
 export default ComponentScreen;
