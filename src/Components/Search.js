@@ -11,7 +11,7 @@ const Search = ({ term, onNameChange, OnTermSubmit }) => {
         autoCapitalize="none"
         autoCorrect={false}
         value={term}
-        onChangeText={(someName) => onNameChange(someName)}
+        onChangeText={(someText) => onNameChange(someText)}
         onEndEditing={() => OnTermSubmit()}
       >
         Searching
