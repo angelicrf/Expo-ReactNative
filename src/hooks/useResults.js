@@ -5,19 +5,22 @@ export default () => {
   const [restaurants, setRestaurants] = useState([]);
   const [errMessage, SetErrorMessage] = useState("");
 
-  const SearchRestaurants = () => {
+  const SearchRestaurants = async (searchTerm) => {
     try {
-      const response = yelp.get("/search", {
-        params: { limit: 50, term: term, location: "seattle" },
+      console.log("there");
+
+      const { data } = await yelp.get("/search", {
+        params: { limit: 50, term: searchTerm, location: "seattle" },
       });
-      console.log(response.data.businesses);
-      setRestaurants(response.data.businesses);
+      console.log(data.businesses);
+      setRestaurants(data.businesses);
     } catch (e) {
       SetErrorMessage("Can not find the searched food.");
+      setRestaurants([]);
     }
   };
   useEffect(() => {
-    return () => SearchRestaurants();
+    SearchRestaurants("pasta");
   }, []);
   return [SearchRestaurants, restaurants, errMessage];
 };

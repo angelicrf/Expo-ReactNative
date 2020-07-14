@@ -19,7 +19,7 @@ const SearchScreen = () => {
       <Search
         name={term}
         onNameChange={(newText) => setTerm(newText)}
-        OnTermSubmit={() => SearchRestaurants()}
+        OnTermSubmit={() => SearchRestaurants(term)}
       />
       {errMessage ? <Text>{errMessage}</Text> : null}
       <Text> We found {restaurants.length}</Text>
