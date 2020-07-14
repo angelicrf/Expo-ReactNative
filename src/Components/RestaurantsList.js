@@ -1,11 +1,18 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, TextInput, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import React from "react";
+import { Text, StyleSheet, FlatList, View } from "react-native";
+import RestaurantsDetail from "./RestaurantsDetail";
 
-const RestaurantsList = ({ title }) => {
+const RestaurantsList = ({ title, restaurants }) => {
   return (
     <View>
       <Text style={styles.titleStyle}>{title}</Text>
+      <FlatList
+        data={restaurants}
+        keyExtractor={(restaurants) => restaurants.id}
+        renderItem={({ item }) => {
+          return <RestaurantsDetail result={item} />;
+        }}
+      />
     </View>
   );
 };

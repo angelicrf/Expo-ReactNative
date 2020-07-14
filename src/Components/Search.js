@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, TextInput, View } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const Search = ({ term, onNameChange, OnTermSubmit }) => {
@@ -10,12 +10,11 @@ const Search = ({ term, onNameChange, OnTermSubmit }) => {
         style={styles.textInput}
         autoCapitalize="none"
         autoCorrect={false}
+        placeholder="Search restaurant"
         value={term}
         onChangeText={onNameChange}
         onEndEditing={OnTermSubmit}
-      >
-        Searching
-      </TextInput>
+      />
     </View>
   );
 };
