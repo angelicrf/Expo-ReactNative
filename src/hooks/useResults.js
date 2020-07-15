@@ -7,12 +7,12 @@ export default () => {
 
   const SearchRestaurants = async (searchTerm) => {
     try {
-      console.log("there");
+      //console.log("there");
 
       const { data } = await yelp.get("/search", {
         params: { limit: 50, term: searchTerm, location: "seattle" },
       });
-      console.log(data.businesses);
+      //console.log(data.businesses);
       setRestaurants(data.businesses);
     } catch (e) {
       SetErrorMessage("Can not find the searched food.");
