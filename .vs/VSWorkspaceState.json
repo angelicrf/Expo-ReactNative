@@ -7,6 +7,6 @@
     "\\src\\hooks",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\Components\\RestaurantsList.js",
+  "SelectedNode": "\\src\\hooks\\useResults.js",
   "PreviewInSolutionExplorer": false
 }
