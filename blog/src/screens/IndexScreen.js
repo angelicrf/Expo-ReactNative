@@ -21,7 +21,9 @@ const IndexScreen = ({ navigation }) => {
         keyExtractor={txt => txt.id}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate("Show")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Show", { id: item.id })}
+            >
               <View style={styles.row}>
                 <Text style={styles.title}>
                   {item.title} - {item.id}
@@ -36,6 +38,16 @@ const IndexScreen = ({ navigation }) => {
       />
     </View>
   );
+};
+IndexScreen.navigationOptions = ({ navigation }) => {
+  //console.log(props);
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate("Create")}>
+        <Feather name="plus" />
+      </TouchableOpacity>
+    )
+  };
 };
 const styles = StyleSheet.create({
   row: {
