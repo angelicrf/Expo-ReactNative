@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\api",
-    "\\src\\Components",
-    "\\src\\hooks",
-    "\\src\\screens"
+    "\\blog",
+    "\\blog\\src",
+    "\\blog\\src\\context",
+    "\\blog\\src\\screens"
   ],
-  "SelectedNode": "\\src\\hooks\\useResults.js",
+  "SelectedNode": "\\blog",
   "PreviewInSolutionExplorer": false
 }
