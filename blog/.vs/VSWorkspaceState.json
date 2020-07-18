@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\components",
-    "\\src\\context",
-    "\\src\\screens"
+    ""
   ],
-  "SelectedNode": "\\src\\screens\\CreateScreen.js",
+  "SelectedNode": "\\db.json",
   "PreviewInSolutionExplorer": false
 }
