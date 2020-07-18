@@ -5,7 +5,14 @@ import jsonserver from "../api/jsonserver";
 const blogReducer = (state, action) => {
   switch (action.type) {
     case "get_Blog_Post":
-      return action.payload;
+      return [
+        ...state,
+        {
+          title: action.payload.title,
+          content: action.payload.content,
+          id: action.payload.id
+        }
+      ];
     case "add_Blog_Post":
       return [
         ...state,
@@ -27,10 +34,14 @@ const blogReducer = (state, action) => {
 };
 const getBlogPost = dispatch => {
   return async () => {
-    const response = await jsonserver.get("/blogpost");
-
+    const response = await jsonserver.get("/blogposts");
+    console.log(response.data.title);
     dispatch({
-      payload: response.data,
+      payload: {
+        title: response.data.title,
+        content: response.data.content,
+        id: response.data.id
+      },
       type: "get_Blog_Post"
     });
   };
