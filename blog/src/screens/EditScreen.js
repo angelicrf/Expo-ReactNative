@@ -33,7 +33,9 @@ const EditScreen = ({ navigation }) => {
       <Button
         style={styles.button}
         title="Edit post"
-        onPress={() => EditBlogPost(id, title, content)}
+        onPress={() => {
+          EditBlogPost(id, title, content, () => navigation.pop());
+        }}
       />
     </View>
   );
