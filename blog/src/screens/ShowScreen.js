@@ -13,15 +13,23 @@ const ShowScreen = ({ navigation }) => {
   return (
     <View>
       <Text>{blogPost.title}</Text>
+      <Text>{blogPost.content}</Text>
     </View>
   );
 };
-ShowScreen.navigationOprions = ({ navigation }) => {
+ShowScreen.navigationOptions = ({ navigation }) => {
   return {
-    headerRight: (
-      <TouchableOpacity onPress={() => navigation.navigate("Edit")}>
-        <EvilIcons name="pencil" size={30} />
-      </TouchableOpacity>
+    headerRight: () => (
+      <View>
+        <Text>my name</Text>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("Edit", { id: navigation.getParam("id") })
+          }
+        >
+          <EvilIcons name="pencil" size={30} />
+        </TouchableOpacity>
+      </View>
     )
   };
 };
