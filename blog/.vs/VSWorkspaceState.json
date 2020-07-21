@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\api",
     "\\src\\components",
     "\\src\\context",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\screens\\CreateScreen.js",
+  "SelectedNode": "\\App.js",
   "PreviewInSolutionExplorer": false
 }
