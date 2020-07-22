@@ -1,19 +1,57 @@
 {
-  "posts": [
+  "blogposts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "title": "API POST",
+      "content": "content for my post"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "Newly created API post",
+      "content": "Some content",
+      "id": 2
+    },
+    {
+      "title": "Third post creation",
+      "content": "Asdofjl",
+      "id": 3
+    },
+    {
+      "title": "4",
+      "content": "Alskdjlkdf",
+      "id": 4
+    },
+    {
+      "title": "Add blog post 5",
+      "content": "Asdfasdfasdf",
+      "id": 5
+    },
+    {
+      "title": "T",
+      "content": "T",
+      "id": 6
+    },
+    {
+      "title": "yammi bread post",
+      "content": "yammi bread content",
+      "id": 7
+    },
+    {
+      "title": "steak one",
+      "content": "steak content one",
+      "id": 8
+    },
+    {
+      "id": "coffee vanilla cake one",
+      "title": "coffee vanilla cake one"
+    },
+    {
+      "id": "coffee vanilla cake two",
+      "title": "coffee vanilla cake two"
+    },
+    {
+      "id": "28724",
+      "title": "coffee vanilla cake three",
+      "content": "coffee vanilla cake three"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
