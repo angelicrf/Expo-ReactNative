@@ -5,6 +5,7 @@ import { Context } from "../context/BlogContext";
 const CreateScreen = ({ navigation }) => {
   const [title, SetTitle] = useState("");
   const [content, SetContent] = useState("");
+  const id = navigation.getParam("id");
 
   const { addBlogPost } = useContext(Context);
   return (
@@ -30,7 +31,7 @@ const CreateScreen = ({ navigation }) => {
       <Button
         title="Add content"
         onPress={() => {
-          addBlogPost(title, content, () => {
+          addBlogPost(id, title, content, () => {
             navigation.navigate("Index");
           });
         }}

@@ -2,26 +2,27 @@ import React, { useState, useReducer } from "react";
 import createDataContext from "./createDataContext";
 import jsonserver from "../api/jsonserver";
 
+let id = Math.floor(Math.random() * 99999);
 const blogReducer = (state, action) => {
   switch (action.type) {
     case "get_Blog_Post":
       return [
         ...state,
         {
+          id: action.payload.id,
           title: action.payload.title,
-          content: action.payload.content,
-          id: action.payload.id
+          content: action.payload.content
         }
       ];
-    case "add_Blog_Post":
-      return [
-        ...state,
-        {
-          title: action.payload.title,
-          content: action.payload.content,
-          id: Math.floor(Math.random() * 99999)
-        }
-      ];
+    //case "add_Blog_Post":
+    //  return [
+    //    ...state,
+    //    {
+    //      title: action.payload.title,
+    //      content: action.payload.content,
+    //      id: action.payload.id
+    //    }
+    //  ];
     case "delete_Blog_Post":
       return state.filter(blogPost => blogPost.id != action.payload);
     case "edit_Blog_Post":
@@ -38,24 +39,29 @@ const getBlogPost = dispatch => {
     console.log(response.data.id);
     dispatch({
       payload: {
+        id: response.data.id,
         title: response.data.title,
-        content: response.data.content,
-        id: response.data.id
+        content: response.data.content
       },
       type: "get_Blog_Post"
     });
   };
 };
-const addBlogPost = dispatch => {
-  return async (title, content, callback) => {
+const addBlogPost = () => {
+  return async (
+    id = Math.floor(Math.random() * 99999),
+    title,
+    content,
+    callback
+  ) => {
     await jsonserver.post("/blogposts", {
-      id: "10",
-      title: title,
-      content: content
+      id,
+      title,
+      content
     });
     //dispatch({
     //  type: "add_Blog_Post",
-    //  payload: { title: title, content: content }
+    //  payload: { title: title, content: content, id: id }
     //});
     if (callback) {
       callback();
