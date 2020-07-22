@@ -6,23 +6,7 @@ let id = Math.floor(Math.random() * 99999);
 const blogReducer = (state, action) => {
   switch (action.type) {
     case "get_Blog_Post":
-      return [
-        ...state,
-        {
-          id: action.payload.id,
-          title: action.payload.title,
-          content: action.payload.content
-        }
-      ];
-    //case "add_Blog_Post":
-    //  return [
-    //    ...state,
-    //    {
-    //      title: action.payload.title,
-    //      content: action.payload.content,
-    //      id: action.payload.id
-    //    }
-    //  ];
+      return action.payload;
     case "delete_Blog_Post":
       return state.filter(blogPost => blogPost.id != action.payload);
     case "edit_Blog_Post":
@@ -36,20 +20,16 @@ const blogReducer = (state, action) => {
 const getBlogPost = dispatch => {
   return async () => {
     const response = await jsonserver.get("/blogposts");
-    console.log(response.data.id);
+    //console.log(response.data.id);
     dispatch({
-      payload: {
-        id: response.data.id,
-        title: response.data.title,
-        content: response.data.content
-      },
+      payload: response.data,
       type: "get_Blog_Post"
     });
   };
 };
 const addBlogPost = () => {
   return async (
-    id = Math.floor(Math.random() * 99999),
+    id = Math.floor(Math.random() * 99999).toString(),
     title,
     content,
     callback

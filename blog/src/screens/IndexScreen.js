@@ -15,11 +15,11 @@ const IndexScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPost();
-    const listner = navigation.addListener("didFocus", () => {
+    const listener = navigation.addListener("didFocus", () => {
       getBlogPost();
     });
     return () => {
-      listner.remove();
+      listener.remove();
     };
   }, []);
 
@@ -27,7 +27,7 @@ const IndexScreen = ({ navigation }) => {
     <View>
       <FlatList
         data={state}
-        keyExtractor={txt => txt.id}
+        keyExtractor={blogPost => blogPost.id}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
