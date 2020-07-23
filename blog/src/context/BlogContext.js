@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 import createDataContext from "./createDataContext";
 import jsonserver from "../api/jsonserver";
 
@@ -20,7 +20,6 @@ const blogReducer = (state, action) => {
 const getBlogPost = dispatch => {
   return async () => {
     const response = await jsonserver.get("/blogposts");
-    //console.log(response.data.id);
     dispatch({
       payload: response.data,
       type: "get_Blog_Post"

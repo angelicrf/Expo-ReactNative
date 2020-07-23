@@ -4,8 +4,8 @@ import { Context } from "../context/BlogContext";
 import { EvilIcons } from "@expo/vector-icons";
 
 const ShowScreen = ({ navigation }) => {
-  //const id = navigation.getParam("id");
   const { state } = useContext(Context);
+
   const blogPost = state.find(
     blogPost => blogPost.id === navigation.getParam("id")
   );
@@ -21,7 +21,6 @@ ShowScreen.navigationOptions = ({ navigation }) => {
   return {
     headerRight: () => (
       <View>
-        <Text>my name</Text>
         <TouchableOpacity
           onPress={() =>
             navigation.navigate("Edit", { id: navigation.getParam("id") })
