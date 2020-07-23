@@ -1,12 +1,15 @@
+require("../models/User");
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const authRoutes = require("../routes/authRoutes");
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.json());
 app.use(authRoutes);
 const mongoUri =
-  "mongodb+srv://admin:password123456@cluster0.kymqq.mongodb.net/<dbname>?retryWrites=true&w=majority";
+  "mongodb+srv://admin:password123456@cluster0.kymqq.mongodb.net/Test?retryWrites=true&w=majority";
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
