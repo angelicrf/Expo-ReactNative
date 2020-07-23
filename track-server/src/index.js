@@ -1,7 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const authRoutes = require("../routes/authRoutes");
 const app = express();
 const port = 3000;
+
+app.use(authRoutes);
 const mongoUri =
   "mongodb+srv://admin:password123456@cluster0.kymqq.mongodb.net/<dbname>?retryWrites=true&w=majority";
 mongoose.connect(mongoUri, {
