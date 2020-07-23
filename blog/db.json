@@ -1,13 +1,8 @@
 {
   "blogposts": [
     {
-      "id": 1,
-      "title": "API POST",
-      "content": "content for my post"
-    },
-    {
-      "title": "Newly created API post",
-      "content": "Some content",
+      "title": "API post editted",
+      "content": "Editted some content",
       "id": 2
     },
     {
@@ -34,11 +29,6 @@
       "title": "yammi bread post",
       "content": "yammi bread content",
       "id": 7
-    },
-    {
-      "title": "steak one",
-      "content": "steak content one",
-      "id": 8
     },
     {
       "id": "coffee vanilla cake one",
