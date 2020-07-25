@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoutes = require("../routes/authRoutes");
+const requireAuth = require("../src/middlewares/requireAuth");
+
 const app = express();
 const port = 3000;
 
@@ -21,8 +23,8 @@ mongoose.connection.on("connected", () => {
 mongoose.connection.on("error", error => {
   console.error("Error connecting to mongoDB...");
 });
-app.get("/", (req, res) => {
-  res.send("Hi Angelique");
+app.get("/", requireAuth, (req, res) => {
+  res.send(`Hi, your email is: ${req.user.email} `);
 });
 
 app.listen(3000, () => {
