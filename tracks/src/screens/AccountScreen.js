@@ -1,10 +1,24 @@
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Text, Button } from "react-native";
 
-const AccountScreen = () => {
-  return <Text style={{ fontSize: 48 }}>AccountScreen</Text>;
+const AccountScreen = ({ navigation }) => {
+  return (
+    <>
+      <Text style={styles.text}>AccountScreen</Text>
+      <Button
+        title="Go Track Create"
+        onPress={() => navigation.navigate("TrackCreate")}
+      />
+    </>
+  );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text: {
+    marginTop: 20,
+    fontSize: 20,
+    fontWeight: "bold"
+  }
+});
 
 export default AccountScreen;
