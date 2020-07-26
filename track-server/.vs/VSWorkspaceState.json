@@ -6,6 +6,6 @@
     "\\src",
     "\\src\\middlewares"
   ],
-  "SelectedNode": "\\routes\\authRoutes.js",
+  "SelectedNode": "\\models\\Track.js",
   "PreviewInSolutionExplorer": false
 }
