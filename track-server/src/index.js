@@ -1,15 +1,18 @@
 require("../models/User");
+require("../models/Track");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoutes = require("../routes/authRoutes");
 const requireAuth = require("../src/middlewares/requireAuth");
-
+const trackRoutes = require("../routes/trackRoutes");
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
+
 const mongoUri =
   "mongodb+srv://admin:password123456@cluster0.kymqq.mongodb.net/Test?retryWrites=true&w=majority";
 mongoose.connect(mongoUri, {
