@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\models",
-    "\\routes"
+    "\\routes",
+    "\\src",
+    "\\src\\middlewares"
   ],
-  "SelectedNode": "\\models\\User.js",
+  "SelectedNode": "\\routes\\authRoutes.js",
   "PreviewInSolutionExplorer": false
 }
