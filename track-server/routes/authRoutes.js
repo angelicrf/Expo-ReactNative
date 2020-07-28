@@ -13,7 +13,7 @@ router.post("/signup", async (req, res) => {
     console.log(token);
     res.send({ token });
   } catch (e) {
-    return res.status(422).send(err);
+    return res.status(422).send(e);
   }
 });
 router.post("/signin", async (req, res) => {
@@ -21,7 +21,7 @@ router.post("/signin", async (req, res) => {
   if (!email || !password) {
     return res
       .status(422)
-      .send({ err: "There is an error from email or password" });
+      .send({ error: "There is an error from email or password" });
   }
   const user = await User.findOne({ email });
   if (!user) {

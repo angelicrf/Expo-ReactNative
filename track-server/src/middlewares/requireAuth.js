@@ -5,12 +5,12 @@ const User = mongoose.model("User");
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
   if (!authorization) {
-    return res.status(401).send({ error: "you must login" });
+    return res.status(401).send({ error: "There is a problem" });
   }
   const token = authorization.replace("Bearer ", "");
-  jwt.verify(token, "MY_SECRET_KEY", async (error, payload) => {
-    if (error) {
-      return res.status(402).send({ error: "You must sign in" });
+  jwt.verify(token, "MY_SECRET_KEY", async (err, payload) => {
+    if (err) {
+      return res.status(401).send({ error: "You must sign in" });
     }
     const { userId } = payload;
     const user = await User.findById(userId);
