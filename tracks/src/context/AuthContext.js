@@ -18,8 +18,10 @@ const signup = dispatch => async (email, password) => {
   try {
     const response = await tracker.post("/signup", { email, password });
     console.log(response.data);
-    await AsyncStorage.setItem(response.data.token);
-    //await AsyncStorage.getItem("token");
+
+    AsyncStorage.setItem(response.data.token);
+    //AsyncStorage.getItem("token");
+    console.log("I am here4");
     dispatch({ type: "signup", payload: response.data.token });
     navigate("mainFlow");
   } catch (e) {
