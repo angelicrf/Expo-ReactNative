@@ -21,7 +21,7 @@ const signup = dispatch => async (email, password) => {
 
     AsyncStorage.setItem(response.data.token);
     //AsyncStorage.getItem("token");
-    console.log("I am here4");
+
     dispatch({ type: "signup", payload: response.data.token });
     navigate("mainFlow");
   } catch (e) {
