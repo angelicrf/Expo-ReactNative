@@ -3,13 +3,15 @@ import { View, StyleSheet } from "react-native";
 import { Context } from "../context/AuthContext";
 import AuthForm from "../components/AuthForm";
 import NavLink from "../components/NavLink";
+import { NavigationEvents } from "react-navigation";
 
 const SigninScreen = () => {
-  const { state, signin } = useContext(Context);
+  const { state, signin, clearErrorMessage } = useContext(Context);
   console.log(state);
 
   return (
     <View style={styles.view}>
+      <NavigationEvents onWillFocus={clearErrorMessage} />
       <AuthForm
         headerText="Sign in to your account"
         errorMessage={state.errorMessage}
