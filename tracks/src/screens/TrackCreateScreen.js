@@ -5,41 +5,13 @@ import { Text } from "react-native-elements";
 import { SafeAreaView } from "react-navigation";
 import { Context as LocationContext } from "../context/LocationContext";
 import Map from "../components/Map";
-import {
-  requestPermissionsAsync,
-  watchPositionAsync,
-  Accuracy
-} from "expo-location";
+import useLocation from "../hooks/useLocation";
 
 const TrackCreateScreen = () => {
   const { startRecording, stopRecording, addLocation } = useContext(
     LocationContext
   );
-  const [err, Seterr] = useState("");
-
-  const startWatching = async () => {
-    try {
-      const { granted } = await requestPermissionsAsync();
-      await watchPositionAsync(
-        {
-          accuracy: Accuracy.BestForNavigation,
-          timeInterval: 1000,
-          distanceInterval: 10
-        },
-        location => {
-          addLocation(location);
-        }
-      );
-      if (!granted) {
-        throw new Error("Location permission not granted");
-      }
-    } catch (e) {
-      Seterr(e);
-    }
-  };
-  useEffect(() => {
-    startWatching();
-  }, []);
+  const [err] = useLocation(location => addLocation(location));
 
   return (
     <SafeAreaView forceInset={{ top: "always" }}>
@@ -50,12 +22,6 @@ const TrackCreateScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  text: {
-    marginTop: 20,
-    fontSize: 20,
-    fontWeight: "bold"
-  }
-});
+const styles = StyleSheet.create({});
 
 export default TrackCreateScreen;
