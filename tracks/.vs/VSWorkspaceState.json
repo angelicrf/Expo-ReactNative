@@ -5,8 +5,9 @@
     "\\src\\api",
     "\\src\\components",
     "\\src\\context",
+    "\\src\\hooks",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\screens\\AccountScreen.js",
+  "SelectedNode": "\\src\\components\\Map.js",
   "PreviewInSolutionExplorer": false
 }
