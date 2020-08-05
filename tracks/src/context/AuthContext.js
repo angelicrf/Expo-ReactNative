@@ -19,6 +19,7 @@ const authReducer = (state, action) => {
 };
 const tryLocalSignin = dispatch => () => {
   const token = AsyncStorage.getItem("token");
+  console.log("read the token from sign in", token);
   if (token) {
     dispatch({
       type: "signin",

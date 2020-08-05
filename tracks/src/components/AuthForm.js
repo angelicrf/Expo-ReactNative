@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   error: {
-    color: "red",
+    color: "brown",
     fontWeight: "bold",
     marginTop: 5
   }

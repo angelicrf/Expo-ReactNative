@@ -25,7 +25,7 @@ const locationReducer = (state, action) => {
         ...state,
         locations: [...state.locations, action.payload]
       };
-    case "change-name":
+    case "change_name":
       return {
         ...state,
         name: action.payload
