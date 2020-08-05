@@ -1,7 +1,6 @@
 import createDataContext from "./createDataContext";
 import tracker from "../api/tracker";
 import { AsyncStorage } from "react-native";
-import { navigate } from "../navigationRef";
 
 const locationReducer = (state, action) => {
   switch (action.type) {
@@ -29,6 +28,12 @@ const locationReducer = (state, action) => {
       return {
         ...state,
         name: action.payload
+      };
+    case "reset":
+      return {
+        ...state,
+        name: "",
+        locations: []
       };
     default:
       return state;
@@ -62,8 +67,13 @@ const addLocation = dispatch => (location, recording) => {
     });
   }
 };
+const reset = dispatch => () => {
+  dispatch({
+    type: "reset"
+  });
+};
 export const { Provider, Context } = createDataContext(
   locationReducer,
-  { startRecording, stopRecording, addLocation, changeName },
+  { startRecording, stopRecording, addLocation, changeName, reset },
   { name: null, recording: false, locations: [], currentLocation: null }
 );
