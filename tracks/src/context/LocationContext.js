@@ -51,7 +51,6 @@ const stopRecording = dispatch => () => {
   });
 };
 const addLocation = dispatch => (location, recording) => {
-  console.log("Are you tracking?");
   dispatch({
     type: "add_current_location",
     payload: location
@@ -66,5 +65,5 @@ const addLocation = dispatch => (location, recording) => {
 export const { Provider, Context } = createDataContext(
   locationReducer,
   { startRecording, stopRecording, addLocation, changeName },
-  { name: "", recording: false, locations: [], currentLocation: null }
+  { name: null, recording: false, locations: [], currentLocation: null }
 );
