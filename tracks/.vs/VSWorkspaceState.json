@@ -8,6 +8,6 @@
     "\\src\\hooks",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\components\\Map.js",
+  "SelectedNode": "\\src\\context\\AuthContext.js",
   "PreviewInSolutionExplorer": false
 }

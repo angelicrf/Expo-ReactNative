@@ -12,8 +12,8 @@ const trackReducer = (state, action) => {
 
 const fetchTracks = dispatch => () => {};
 const createTracks = dispatch => async (name, locations) => {
-  const response = await tracker.post("/tracks", { name, locations });
-  console.log(response.data);
+  await tracker.post("/tracks", { name, locations });
+  //console.log(response.data);
   //dispatch({
   //    type: "create_track",
   //    name,
