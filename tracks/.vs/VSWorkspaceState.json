@@ -3,11 +3,10 @@
     "",
     "\\src",
     "\\src\\api",
-    "\\src\\components",
     "\\src\\context",
     "\\src\\hooks",
     "\\src\\screens"
   ],
-  "SelectedNode": "\\src\\context\\AuthContext.js",
+  "SelectedNode": "\\src\\navigationRef.js",
   "PreviewInSolutionExplorer": false
 }
