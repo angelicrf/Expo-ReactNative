@@ -1,7 +1,5 @@
 import createDataContext from "./createDataContext";
 import tracker from "../api/tracker";
-import { AsyncStorage } from "react-native";
-import { navigate } from "../navigationRef";
 
 const trackReducer = (state, action) => {
   switch (action.type) {
